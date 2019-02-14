@@ -319,7 +319,8 @@ directive_types = {
     'freelist': int,
     'c_string_type': one_of('bytes', 'bytearray', 'str', 'unicode'),
     'c_string_encoding': normalise_encoding_name,
-    'cpow': bool
+    'cpow': bool,
+    'trashcan': bool,
 }
 
 for key, val in _directive_defaults.items():
@@ -362,6 +363,7 @@ directive_scopes = {  # defaults to available everywhere
     'np_pythran': ('module',),
     'fast_gil': ('module',),
     'iterable_coroutine': ('module', 'function'),
+    'trashcan' : ('cclass',),
 }
 
 
